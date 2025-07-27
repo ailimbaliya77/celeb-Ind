@@ -14,8 +14,8 @@ function Navvbar(){
     <nav className="sticky top-0 z-50 bg-gradient-to-r from-pink-400 to-purple-400 text-white shadow-md">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
         <Link to="/" className="text-xl sm:text-2xl font-bold">
-          <span className="text-white">Shaadi</span>
-          <span className="text-yellow-400">Global</span>
+          <span className="text-white">Celeb</span>
+          <span className="text-yellow-400">Ind</span>
         </Link>
         
         {/* Desktop Navigation */}

@@ -55,7 +55,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 mr-4" />
-                  <span>ShaadiGlobal@gmail.com.com</span>
+                  <span>CelebInd@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="h-5 w-5 mr-4" />

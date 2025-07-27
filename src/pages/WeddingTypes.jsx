@@ -12,11 +12,11 @@ import img12 from '../assets/northwedding2.jpg'
 function WeddingTypes() {
   const WeddingTypes = [
     {
-      id: 1,
-      title: 'North Indian Wedding',
-      image: img12,
-      description: 'North Indian weddings, particularly Punjabi ones, are known for their energetic atmosphere with bhangra dancing, elaborate meals, and colorful ceremonies including Mehndi, Sangeet, and Baraat processions.',
-      ceremonies: ['Roka', 'Engagement', 'Mehndi', 'Sangeet', 'Haldi', 'Baraat', 'Pheras', 'Vidaai']
+      id: 4,
+      title: 'Gujarati Wedding',
+      image: img5,
+      description: 'Gujarati weddings are joyous affairs with colorful attire, garba dancing, and unique customs. The ceremonies are festive and include many folk elements and traditional Gujarati cuisine.',
+      ceremonies: ['Grah Shanti', 'Pithi', 'Garba', 'Mandap Muhurat', 'Jaimala', 'Kanyadaan', 'Pheras', 'Vidaai']
     },
     {
       id: 2,
@@ -33,12 +33,13 @@ function WeddingTypes() {
       ceremonies: ['Aiburo Bhaat', 'Dodhi Mangal', 'Gaye Holud', 'Shubho Drishti', 'Saat Paak', 'Sindoor Daan', 'Bou Bhaat']
     },
     {
-      id: 4,
-      title: 'Gujarati Wedding',
-      image: img5,
-      description: 'Gujarati weddings are joyous affairs with colorful attire, garba dancing, and unique customs. The ceremonies are festive and include many folk elements and traditional Gujarati cuisine.',
-      ceremonies: ['Grah Shanti', 'Pithi', 'Garba', 'Mandap Muhurat', 'Jaimala', 'Kanyadaan', 'Pheras', 'Vidaai']
+      id: 1,
+      title: 'North Indian Wedding',
+      image: img12,
+      description: 'North Indian weddings, particularly Punjabi ones, are known for their energetic atmosphere with bhangra dancing, elaborate meals, and colorful ceremonies including Mehndi, Sangeet, and Baraat processions.',
+      ceremonies: ['Roka', 'Engagement', 'Mehndi', 'Sangeet', 'Haldi', 'Baraat', 'Pheras', 'Vidaai']
     },
+    
     {
       id: 5,
       title: 'Maharashtrian Wedding',

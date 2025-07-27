@@ -15,8 +15,8 @@ function Footerr() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center sm:text-left">
             <h3 className="text-lg sm:text-xl font-bold mb-4">
-              <span className="text-white">Shaadi</span>
-              <span className="text-yellow-400">Global</span>
+              <span className="text-white">Celeb</span>
+              <span className="text-yellow-400">Ind</span>
             </h3>
             <p className="text-gray-300 text-sm sm:text-base">Experience authentic Indian weddings anywhere in the world.</p>
           </div>
@@ -74,7 +74,7 @@ function Footerr() {
         </div>
         
         <div className="border-t border-gray-700 mt-6 sm:mt-8 pt-4 sm:pt-6 text-center text-gray-400 text-xs sm:text-sm">
-          <p>&copy; {new Date().getFullYear()} ShaadiGlobal. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} CelebInd. All rights reserved.</p>
         </div>
       </div>
     </footer>

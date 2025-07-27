@@ -128,7 +128,7 @@ const Signup = () =>  {
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Registration Successful!</h2>
             <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
-              Thank you for joining ShaadiGlobal. Your account has been created successfully.
+              Thank you for joining CelebInd. Your account has been created successfully.
             </p>
             <div className="flex gap-3 sm:gap-4 justify-center">
               <Link to="/login" className="bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 sm:px-6 rounded-md transition duration-300 text-sm sm:text-base">
@@ -151,7 +151,7 @@ const Signup = () =>  {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="bg-pink-600 text-white p-4 sm:p-6 text-center">
               <h1 className="text-2xl sm:text-3xl font-bold">Create Your Account</h1>
-              <p className="mt-2 text-sm sm:text-base">Join ShaadiGlobal and start attending your dream wedding</p>
+              <p className="mt-2 text-sm sm:text-base">Join CelebInd and start attending your dream wedding</p>
             </div>
             
             <div className="p-4 sm:p-8">
