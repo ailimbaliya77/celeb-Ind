@@ -86,16 +86,16 @@ function Packages() {
   return (
     <div>
       {/* Hero Banner */}
-      <div className="bg-pink-600 text-white py-16">
+      {/* <div className="bg-pink-600 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Wedding Experience Packages</h1>
           <p className="text-xl max-w-3xl mx-auto">Choose the perfect package to experience the magic of an authentic Indian wedding celebration.</p>
         </div>
-      </div>
+      </div> */}
       
       {/* Packages Section */}
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Select Your Experience</h2>
+      <div className="container mx-auto bg-pink-200 px-4 py-16">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Select Your package</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {Packages.map(pkg => (
@@ -186,13 +186,13 @@ function Packages() {
       </div>
       
       {/* CTA Section */}
-      <div className="bg-pink-600 text-white py-16">
+      <div className="bg-pink-300 text-black py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Experience the Magic?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Book your Indian wedding experience today and create memories that will last a lifetime.
           </p>
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded font-bold text-lg transition">
+          <button className="bg-purple-500 hover:bg-pink-600 text-white px-8 py-4 rounded font-bold text-lg transition">
             Browse Upcoming Weddings
           </button>
         </div>

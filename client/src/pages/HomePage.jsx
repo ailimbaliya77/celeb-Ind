@@ -16,7 +16,7 @@ import imgg4 from '../assets/Bengali+Wedding.jpg'
 
 
 function HomePage()  {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     // Mark images as loaded after component mounts
@@ -247,13 +247,13 @@ function HomePage()  {
       </section>
       
       {/* CTA Section */}
-      <section className="py-10 sm:py-16 bg-pink-600 text-white">
+      <section className="py-10 sm:py-16 bg-pink-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Ready to Experience an Indian Wedding?</h2>
           <p className="text-base sm:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">Join us for a cultural experience like no other. Create an account now to get started!</p>
           <Link 
             to="/signup" 
-            className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded text-sm sm:text-lg inline-block transition"
+            className="bg-purple-500 hover:bg-pink-600 text-black font-bold px-6 sm:px-8 py-3 sm:py-4 rounded text-sm sm:text-lg inline-block transition"
           >
             Sign Up Now
           </Link>

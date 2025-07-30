@@ -44,7 +44,7 @@ export default function ContactPage() {
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
           <div className="md:flex">
             {/* Contact Information Section */}
-            <div className="bg-pink-500 text-white p-8 md:w-1/3">
+            <div className="bg-gray-800 text-white p-8 md:w-1/3">
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
               <p className="text-blue-100 mb-8">Fill up the form and our team will get back to you within 24 hours.</p>
               
@@ -190,7 +190,7 @@ export default function ContactPage() {
                 <div>
                   <button
                     type="submit"
-                    className="group relative flex w-full justify-center rounded-md border border-transparent bg-pink-400 py-2 px-4 text-sm font-medium text-black hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    className="group relative flex w-full justify-center rounded-md border border-transparent bg-gray-800 py-2 px-4 text-sm font-medium text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   >
                     <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                       <Send className="h-5 w-5 text-blue-500 group-hover:text-blue-400" />
