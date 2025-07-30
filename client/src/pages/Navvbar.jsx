@@ -11,10 +11,10 @@ function Navvbar(){
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-gradient-to-r from-pink-200 to-white-400 text-white shadow-md">
+    <nav className="sticky top-0 z-50 bg-gradient-to-r from-gray-500 to-white-400 text-white shadow-2xl">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
-        <Link to="/" className="text-xl sm:text-4xl font-bold">
-          <span className="text-black">Celeb</span>
+        <Link to="/" className="text-xl sm:text-4xl border-white font-bold">
+          <span className="text-gray-900">Celeb</span>
           <span className="text-purple-800">Ind</span>
         </Link>
         

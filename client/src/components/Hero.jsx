@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
-import img1 from '../assets/wedding-portrait-770x515.jpg'
+import img1 from '../assets/marco-vector-diseno-floral-blanco_53876-168135.avif'
 
 function Hero() {
   const headingRef = useRef(null);
