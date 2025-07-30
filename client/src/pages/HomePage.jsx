@@ -89,10 +89,10 @@ function HomePage()  {
       <Hero />
       
       {/* Featured Weddings Section */}
-      <section className="py-10 sm:py-16 bg-pink-100">
+      <section className="py-10 sm:py-16 bg-white-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2 text-purple-800">Featured Weddings</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2 text-black">Featured Weddings</h2>
           <p className="text-purple-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base">Discover upcoming authentic Indian weddings that you can attend as a special guest</p>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -110,7 +110,7 @@ function HomePage()  {
           </div>
           
           <div className="text-center mt-8 sm:mt-12">
-            <Link to="/wedding-types" className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold px-4 sm:px-6 py-2 sm:py-3 rounded transition text-sm sm:text-base">
+            <Link to="/wedding-types" className="inline-block bg-orange-600 hover:bg-pink-700 text-white font-bold px-4 sm:px-6 py-2 sm:py-3 rounded transition text-sm sm:text-base">
               View All Weddings
             </Link>
           </div>

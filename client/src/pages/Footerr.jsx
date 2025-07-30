@@ -18,7 +18,7 @@ function Footerr() {
               <span className="text-white">Celeb</span>
               <span className="text-yellow-400">Ind</span>
             </h3>
-            <p className="text-gray-300 text-sm sm:text-base">Experience authentic Indian weddings anywhere in the world.</p>
+            <p className="text-gray-300 text-sm sm:text-base">Experience authentic Indian weddings anywhere from the world.</p>
           </div>
           
           <div className="text-center sm:text-left">
