@@ -71,7 +71,7 @@ function Services() {
       </div> */}
       
       {/* Services Grid */}
-      <div className="container mx-auto bg-pink-200 px-4 py-16">
+      <div className="container mx-auto  px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map(service => (
             <div key={service.id} className="bg-white rounded-lg shadow-lg p-6 transition transform hover:-translate-y-1 hover:shadow-xl">

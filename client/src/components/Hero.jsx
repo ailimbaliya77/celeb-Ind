@@ -19,7 +19,7 @@ function Hero() {
         opacity: 1,
         duration: 6,
         ease: 'bounce.out',
-        delay: 0.5,
+        delay: 0.3,
         scrollTrigger: {
           trigger: headingRef.current,}
       });
@@ -29,7 +29,7 @@ function Hero() {
 
   return (
     <div className="relative text-pink-800  overflow-visible h-screen">
-      <div className="absolute inset-0 opacity-30 bg-gradient-to-r from-purple-200 to-pink-400 bg-cover bg-center" style={{ backgroundImage: `url(${img1})`}} ></div>
+      <div className="absolute inset-0  bg-gradient-to-r from-purple-200 to-pink-400 bg-cover bg-center" style={{ backgroundImage: `url(${img1})`}} ></div>
       <div className="container mx-auto px-4  sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32 relative">
         <div className="text-center max-w-3xl mx-auto">
           <h1
