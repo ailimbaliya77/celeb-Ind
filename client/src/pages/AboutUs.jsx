@@ -35,7 +35,7 @@ function AboutUs()  {
   return (
     <div>
       {/* Hero Banner */}
-      {/* <div className="bg-pink-600 text-white py-10 md:py-16">
+      {/* <div className="bg-red-600 text-white py-10 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4">About CelebInd</h1>
           <p className="text-lg sm:text-xl max-w-3xl mx-auto">Connecting cultures through the celebration of authentic Indian weddings.</p>
@@ -43,7 +43,7 @@ function AboutUs()  {
       </div> */}
       
       {/* Our Story */}
-      <div className="container mx-auto bg-pink-100 px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 md:mb-6 text-gray-800">Our Story</h2>
@@ -68,7 +68,7 @@ function AboutUs()  {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
-              <div className="text-pink-600 text-3xl sm:text-4xl mb-3 md:mb-4">
+              <div className="text-red-600 text-3xl sm:text-4xl mb-3 md:mb-4">
                 <i className="fas fa-hands-helping"></i>
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 md:mb-3 text-gray-800">Cultural Exchange</h3>
@@ -76,7 +76,7 @@ function AboutUs()  {
             </div>
             
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
-              <div className="text-pink-600 text-3xl sm:text-4xl mb-3 md:mb-4">
+              <div className="text-red-600 text-3xl sm:text-4xl mb-3 md:mb-4">
                 <i className="fas fa-heart"></i>
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 md:mb-3 text-gray-800">Authentic Experiences</h3>
@@ -84,7 +84,7 @@ function AboutUs()  {
             </div>
             
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
-              <div className="text-pink-600 text-3xl sm:text-4xl mb-3 md:mb-4">
+              <div className="text-red-600 text-3xl sm:text-4xl mb-3 md:mb-4">
                 <i className="fas fa-globe-asia"></i>
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 md:mb-3 text-gray-800">Community Support</h3>
@@ -106,7 +106,7 @@ function AboutUs()  {
               </div>
               <div className="p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold mb-1 text-gray-800">{member.name}</h3>
-                <p className="text-pink-600 font-medium mb-3 text-sm sm:text-base">{member.position}</p>
+                <p className="text-red-600 font-medium mb-3 text-sm sm:text-base">{member.position}</p>
                 <p className="text-gray-600 text-sm sm:text-base">{member.bio}</p>
               </div>
             </div>
@@ -122,7 +122,7 @@ function AboutUs()  {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
               <div className="bg-purple-800 p-3 rounded-full mb-3 sm:mb-0 sm:mr-4">
-                <i className="fas fa-heart text-pink-600 text-xl"></i>
+                <i className="fas fa-heart text-red-600 text-xl"></i>
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Respect for Traditions</h3>
@@ -132,7 +132,7 @@ function AboutUs()  {
             
             <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
               <div className="bg-purple-800 p-3 rounded-full mb-3 sm:mb-0 sm:mr-4">
-                <i className="fas fa-handshake text-pink-600 text-xl"></i>
+                <i className="fas fa-handshake text-red-600 text-xl"></i>
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Authentic Connections</h3>
@@ -142,7 +142,7 @@ function AboutUs()  {
             
             <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
               <div className="bg-purple-800 p-3 rounded-full mb-3 sm:mb-0 sm:mr-4">
-                <i className="fas fa-globe text-pink-600 text-xl"></i>
+                <i className="fas fa-globe text-red-600 text-xl"></i>
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Global Understanding</h3>
@@ -152,7 +152,7 @@ function AboutUs()  {
             
             <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
               <div className="bg-purple-800 p-3 rounded-full mb-3 sm:mb-0 sm:mr-4">
-                <i className="fas fa-gem text-pink-600 text-xl"></i>
+                <i className="fas fa-gem text-red-600 text-xl"></i>
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800">Quality Experience</h3>

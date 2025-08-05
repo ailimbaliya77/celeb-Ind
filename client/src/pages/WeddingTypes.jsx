@@ -72,7 +72,7 @@ function WeddingTypes() {
   return (
     <div>
       {/* Hero Banner */}
-      {/* <div className="bg-pink-300 text-pink-800 py-16">
+      {/* <div className="bg-red-300 text-red-800 py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Indian Wedding Types</h1>
           <p className="text-xl max-w-3xl mx-auto">Discover the rich diversity of Indian wedding traditions from different regions of India, each with unique customs, attire, and ceremonies.</p>
@@ -100,14 +100,14 @@ function WeddingTypes() {
                   {weddingType.ceremonies.map((ceremony, idx) => (
                     <span 
                       key={idx} 
-                      className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm"
+                      className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm"
                     >
                       {ceremony}
                     </span>
                   ))}
                 </div>
                 
-                <button className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded transition">
+                <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded transition">
                   Find {weddingType.title}s to Attend
                 </button>
               </div>
@@ -117,7 +117,7 @@ function WeddingTypes() {
       </div>
       
       {/* CTA Section */}
-      <div className="bg-pink-300 py-16">
+      <div className="bg-red-300 py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4 text-gray-800">Ready to Experience an Indian Wedding?</h2>
           <p className="text-xl mb-8 text-gray-600 max-w-2xl mx-auto">
@@ -127,7 +127,7 @@ function WeddingTypes() {
             <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded font-bold transition">
               Browse Upcoming Weddings
             </button>
-            <button className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded font-bold transition">
+            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded font-bold transition">
               Sign Up for Alerts
             </button>
           </div>

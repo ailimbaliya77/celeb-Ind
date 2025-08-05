@@ -11,11 +11,11 @@ function Navvbar(){
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-gradient-to-r from-gray-500 to-white-400 text-white shadow-2xl">
+    <nav className="sticky top-0 z-50 bg-gradient-to-r from-red-500 to-white-400 text-white shadow-2xl">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
         <Link to="/" className="text-xl sm:text-4xl border-white font-bold">
-          <span className="text-gray-900">Celeb</span>
-          <span className="text-purple-800">Ind</span>
+          <span className="text-white-900">Celeb</span>
+          <span className="text-red-800">Ind</span>
         </Link>
         
         {/* Desktop Navigation */}
@@ -26,6 +26,7 @@ function Navvbar(){
           <Link to="/services" className="text-sm lg:text-base hover:text-white transition">Services</Link>
           <Link to="/about-us" className="text-sm lg:text-base hover:text-white transition">About Us</Link>
           <Link to="/contact" className="text-sm lg:text-base hover:text-white transition">Contact</Link>
+          <Link to="/Tourism" className="text-sm lg:text-base hover:text-white transition">tourism</Link>
         </div>
         
         {/* Desktop Auth Buttons */}
@@ -95,7 +96,16 @@ function Navvbar(){
             >
               Contact
             </Link>
+            <Link 
+              to="/TourismPlaces" 
+              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-purple-100 hover:text-pink-600 transition"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Tourism
+            </Link>
           </div>
+            
+            
           
           <div className="pt-4 pb-3 border-t border-gray-200">
             <div className="flex items-center justify-center space-x-4 px-4">

@@ -63,7 +63,7 @@ function Services() {
   return (
      <div>
       {/* Hero Banner */}
-      {/* <div className="bg-pink-600 text-white py-16">
+      {/* <div className="bg-red-600 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Our Services</h1>
           <p className="text-xl max-w-3xl mx-auto">Discover the range of services we offer to make your Indian wedding experience authentic, comfortable, and memorable.</p>
@@ -75,12 +75,12 @@ function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map(service => (
             <div key={service.id} className="bg-white rounded-lg shadow-lg p-6 transition transform hover:-translate-y-1 hover:shadow-xl">
-              <div className="text-pink-600 text-4xl mb-4">
+              <div className="text-red-600 text-4xl mb-4">
                 <i className={service.icon}></i>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
-              <a href={service.link} className="text-pink-600 hover:text-pink-800 font-semibold transition">
+              <a href={service.link} className="text-red-600 hover:text-red-800 font-semibold transition">
                 Learn More <i className="fas fa-arrow-right ml-1"></i>
               </a>
             </div>
@@ -89,7 +89,7 @@ function Services() {
       </div>
       
       {/* Featured Service */}
-      <div className="bg-pink-100 py-16">
+      <div className="bg-red-100 py-16">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center">
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
@@ -120,7 +120,7 @@ function Services() {
                 </li>
               </ul>
               
-              <a href="/packages" className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded inline-block transition">
+              <a href="/packages" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded inline-block transition">
                 View Packages
               </a>
             </div>
@@ -152,13 +152,13 @@ function Services() {
       </div>
       
       {/* Contact CTA */}
-      <div className="bg-pink-300 text-black py-16">
+      <div className="bg-red-300 text-black py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Need a Custom Service?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Contact our team to discuss custom arrangements or special requests for your Indian wedding experience.
           </p>
-          <a href="/contact" className="bg-purple-500 hover:bg-pink-600 text-black px-8 py-4 rounded font-bold text-lg inline-block transition">
+          <a href="/contact" className="bg-purple-500 hover:bg-red-600 text-black px-8 py-4 rounded font-bold text-lg inline-block transition">
             Contact Us
           </a>
         </div>
