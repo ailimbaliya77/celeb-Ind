@@ -4,6 +4,7 @@ import Navvbar from './pages/Navvbar';
 import Footerr from './pages/Footerr';
 import HomePage  from './pages/HomePage'
 import WeddingTypes from './pages/WeddingTypes';
+import WeddingDetails from './pages/WeddingDetails';
 import Packages from './pages/Packages';
 import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/wedding-types" element={<WeddingTypes />} />
+          <Route path="/wedding/:id" element={<WeddingDetails />} />
           <Route path="/packages" element={<Packages />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about-us" element={<AboutUs />} />

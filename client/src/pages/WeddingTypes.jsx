@@ -1,12 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import img4 from '../assets/Bengali+Wedding.jpg'
-import img5 from '../assets/gujrati-wedding.webp'
+import img1 from '../assets/gujrati-wedding.webp'
 import img6 from '../assets/kashmiri.jpeg'
 import img7 from '../assets/kerelian.jpg'
 import img8 from '../assets/maharashtrian wed.jpeg'
-/* import img9 from '../assets/punjabi-engagement-ceremony-3.jpg' */
 import img10 from '../assets/rajasthani-wedding.jpg'
-import img11 from '../assets/south indian wedding.jpeg'
+import img2 from '../assets/south indian wedding.jpeg'
 import img12 from '../assets/northwedding2.jpg'
 
 function WeddingTypes() {
@@ -14,14 +14,14 @@ function WeddingTypes() {
     {
       id: 4,
       title: 'Gujarati Wedding',
-      image: img5,
+      image: img1,
       description: 'Gujarati weddings are joyous affairs with colorful attire, garba dancing, and unique customs. The ceremonies are festive and include many folk elements and traditional Gujarati cuisine.',
       ceremonies: ['Grah Shanti', 'Pithi', 'Garba', 'Mandap Muhurat', 'Jaimala', 'Kanyadaan', 'Pheras', 'Vidaai']
     },
     {
       id: 2,
       title: 'South Indian Wedding',
-      image: img11,
+      image: img2,
       description: 'South Indian weddings (Tamil, Telugu, Malayalam, and Kannada) focus on traditional rituals and religious ceremonies. They are typically more formal and traditional with beautiful silk sarees and distinctive gold jewelry.',
       ceremonies: ['Nischayathartham', 'Kashi Yatra', 'Oonjal', 'Kanyadaan', 'Mangalya Dharanam', 'Saptapadi']
     },
@@ -107,9 +107,12 @@ function WeddingTypes() {
                   ))}
                 </div>
                 
-                <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded transition">
+                <Link 
+                  to={`/wedding/${weddingType.id}`}
+                  className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded transition inline-block"
+                >
                   Find {weddingType.title}s to Attend
-                </button>
+                </Link>
               </div>
             </div>
           ))}
