@@ -139,7 +139,7 @@ function Services() {
             <i className="fas fa-quote-left"></i>
           </div>
           <p className="text-2xl italic mb-8 max-w-4xl mx-auto text-gray-700">
-            "ShaadiGlobal made it so easy to experience an authentic Indian wedding. The traditional outfits they provided made us feel like part of the celebration, and our guide helped us understand all the beautiful ceremonies. It was truly the highlight of our trip to India!"
+            "CelebInd made it so easy to experience an authentic Indian wedding. The traditional outfits they provided made us feel like part of the celebration, and our guide helped us understand all the beautiful ceremonies. It was truly the highlight of our trip to India!"
           </p>
           <div className="flex items-center justify-center">
             <img src="/images/testimonial-avatar.jpg" alt="Emma and Tom" className="w-16 h-16 rounded-full object-cover mr-4" />

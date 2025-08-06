@@ -1,8 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import { Eye, EyeOff, Mail, Lock, LogIn } from 'lucide-react';
+import { useAuthStore } from '../store/AuthStore'; 
 
 function Login(){
+
+const { login } = useAuthStore(); // Zustand login method
+
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -58,17 +63,17 @@ function Login(){
       // Store JWT token
       const token = response.token;
       if (rememberMe) {
-        // Note: In actual implementation, use secure storage
-        // localStorage is not available in this environment
+        
         console.log('Would store token for remember me:', token);
       }
       
-      // Store user data
       const userData = response.user;
       console.log('User data:', userData);
       
-      // Redirect or update app state
-      alert('Login successful!');
+      login(response.user, response.token); 
+
+window.location.href = '/'; 
+
       
       
     } catch (error) {

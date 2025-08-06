@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuthStore } from '../store/AuthStore';
+
 
 const Signup = () => {
+
+const { login } = useAuthStore(); // get login method from zustand
+
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -153,7 +159,8 @@ const Signup = () => {
 
       // Optional: Auto-login the user or send them to verification page
       if (response.token) {
-        console.log('Auto-login token received:', response.token);
+        login(response.user, response.token);
+
         // Store token or redirect to dashboard
       }
       
