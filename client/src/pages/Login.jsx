@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Eye, EyeOff, Mail, Lock, LogIn } from 'lucide-react';
 import { useAuthStore } from '../store/AuthStore'; 
+import { Link } from 'react-router-dom';
 
 function Login(){
 
@@ -16,7 +17,7 @@ const { login } = useAuthStore(); // Zustand login method
   const [error, setError] = useState('');
 
   // API configuration
-  const API_BASE_URL = 'http://localhost:3000';
+  const API_BASE_URL = 'http://localhost:5000/api/v1';
   
   // Custom fetch wrapper with error handling
   const apiCall = async (endpoint, options = {}) => {
@@ -90,7 +91,7 @@ window.location.href = '/';
     
     try {
       // Redirect to the social login endpoint
-      window.location.href = `http://localhost:3000/api/v1/auth/${provider.toLowerCase()}`;
+      window.location.href = `http://localhost:5000/api/v1/auth/${provider.toLowerCase()}`;
       
     } catch (error) {
       console.error(`${provider} login failed:`, error);
@@ -110,7 +111,7 @@ window.location.href = '/';
     setError('');
     
     try {
-      await apiCall('/auth/forgot-password', {
+      await apiCall('api/v1/auth/forgot-password', {
         method: 'POST',
         body: { email }
       });
@@ -311,9 +312,9 @@ window.location.href = '/';
         <div className="text-center mt-3 sm:mt-4">
           <p className="text-xs sm:text-sm text-gray-600">
             Don't have an account?{' '}
-            <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
-              Sign up
-            </a>
+            <Link to="/signup" className="font-medium text-blue-600 hover:text-blue-500">
+               Sign up
+            </Link>
           </p>
         </div>
       </div>

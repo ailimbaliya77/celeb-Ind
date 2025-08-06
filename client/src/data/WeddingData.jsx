@@ -1,4 +1,3 @@
-// src/data/weddingData.js
 import img1 from '../assets/gujrati-wedding.webp';
 import img2 from '../assets/south indian wedding.jpeg';
 import img3 from '../assets/Bengali+Wedding.jpg';
@@ -29,7 +28,7 @@ const WeddingData = [
         image: img3,
         description: 'Bengali weddings feature distinctive rituals, with the bride wearing the traditional red and white saree. These weddings emphasize cultural aspects and typically include elaborate feasts with unique Bengali cuisine.',
         ceremonies: ['Aiburo Bhaat', 'Dodhi Mangal', 'Gaye Holud', 'Shubho Drishti', 'Saat Paak', 'Sindoor Daan', 'Bou Bhaat']
-      },
+},
       {
         id: 1,
         title: 'North Indian Wedding',

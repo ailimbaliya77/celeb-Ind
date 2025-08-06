@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/AuthStore';
 
 
 const Signup = () => {
 
-const { login } = useAuthStore(); // get login method from zustand
-
+const { login } = useAuthStore();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -15,7 +15,7 @@ const { login } = useAuthStore(); // get login method from zustand
     password: '',
     confirmPassword: '',
     phoneNumber: '',
-    role: 'couple', // Default role
+    role: 'couple',
     agreeTerms: false
   });
   
@@ -24,9 +24,9 @@ const { login } = useAuthStore(); // get login method from zustand
   const [showSuccess, setShowSuccess] = useState(false);
 
   // API configuration
-  const API_BASE_URL = 'http://localhost:3000';
+  const API_BASE_URL = 'http://localhost:5000/api/v1';
   
-  // Custom fetch wrapper with error handling
+  // Custom fetch wrapper with better error handling
   const apiCall = async (endpoint, options = {}) => {
     const url = `${API_BASE_URL}${endpoint}`;
     const config = {
@@ -41,14 +41,22 @@ const { login } = useAuthStore(); // get login method from zustand
       config.body = JSON.stringify(config.body);
     }
     
-    const response = await fetch(url, config);
-    
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.message || `HTTP ${response.status}`);
+    try {
+      const response = await fetch(url, config);
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || data.error || `HTTP ${response.status}: ${response.statusText}`);
+      }
+      
+      return data;
+    } catch (error) {
+      // Handle network errors
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        throw new Error('Unable to connect to server. Please check if the server is running.');
+      }
+      throw error;
     }
-    
-    return response.json();
   };
 
   const handleChange = (e) => {
@@ -70,11 +78,15 @@ const { login } = useAuthStore(); // get login method from zustand
     // Validate first name
     if (!formData.firstName.trim()) {
       newErrors.firstName = 'First name is required';
+    } else if (formData.firstName.trim().length < 2) {
+      newErrors.firstName = 'First name must be at least 2 characters';
     }
     
     // Validate last name
     if (!formData.lastName.trim()) {
       newErrors.lastName = 'Last name is required';
+    } else if (formData.lastName.trim().length < 2) {
+      newErrors.lastName = 'Last name must be at least 2 characters';
     }
     
     // Validate email
@@ -90,6 +102,8 @@ const { login } = useAuthStore(); // get login method from zustand
       newErrors.password = 'Password is required';
     } else if (formData.password.length < 8) {
       newErrors.password = 'Password must be at least 8 characters';
+    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(formData.password)) {
+      newErrors.password = 'Password must contain at least one lowercase letter, one uppercase letter, and one number';
     }
     
     // Validate confirm password
@@ -97,10 +111,12 @@ const { login } = useAuthStore(); // get login method from zustand
       newErrors.confirmPassword = 'Passwords do not match';
     }
     
-    // Validate phone number
-    const phoneRegex = /^\+?[0-9]{10,15}$/;
-    if (formData.phoneNumber && !phoneRegex.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = 'Please enter a valid phone number';
+    // Validate phone number (optional but if provided, must be valid)
+    if (formData.phoneNumber && formData.phoneNumber.trim()) {
+      const phoneRegex = /^\+?[0-9]{10,15}$/;
+      if (!phoneRegex.test(formData.phoneNumber.replace(/\s+/g, ''))) {
+        newErrors.phoneNumber = 'Please enter a valid phone number (10-15 digits)';
+      }
     }
     
     // Validate terms agreement
@@ -130,12 +146,14 @@ const { login } = useAuthStore(); // get login method from zustand
         lastName: formData.lastName.trim(),
         email: formData.email.trim().toLowerCase(),
         password: formData.password,
-        phoneNumber: formData.phoneNumber,
+        phoneNumber: formData.phoneNumber.trim() || undefined,
         role: formData.role,
         agreeTerms: formData.agreeTerms
       };
 
-      const response = await apiCall('/auth/register', {
+      console.log('Sending registration data:', { ...registrationData, password: '[HIDDEN]' });
+
+      const response = await apiCall('/users/register', {
         method: 'POST',
         body: registrationData
       });
@@ -157,32 +175,44 @@ const { login } = useAuthStore(); // get login method from zustand
         agreeTerms: false
       });
 
-      // Optional: Auto-login the user or send them to verification page
-      if (response.token) {
+      // Auto-login if token is provided
+      if (response.token && response.user) {
         login(response.user, response.token);
-
-        // Store token or redirect to dashboard
+        // Redirect to dashboard after a short delay
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 2000);
       }
       
     } catch (error) {
       console.error('Registration failed:', error);
       
       // Handle specific error cases
-      if (error.message.includes('email already exists') || error.message.includes('duplicate')) {
+      const errorMessage = error.message.toLowerCase();
+      
+      if (errorMessage.includes('email') && (errorMessage.includes('already') || errorMessage.includes('exists') || errorMessage.includes('duplicate'))) {
         setErrors({
           email: 'This email is already registered. Please use a different email or try logging in.'
         });
-      } else if (error.message.includes('phone')) {
+      } else if (errorMessage.includes('phone') && errorMessage.includes('already')) {
         setErrors({
           phoneNumber: 'This phone number is already registered.'
         });
-      } else if (error.message.includes('password')) {
+      } else if (errorMessage.includes('password') && errorMessage.includes('requirement')) {
         setErrors({
           password: 'Password does not meet requirements.'
         });
+      } else if (errorMessage.includes('validation') || errorMessage.includes('invalid')) {
+        setErrors({
+          form: 'Please check your input and try again.'
+        });
+      } else if (errorMessage.includes('server') || errorMessage.includes('connect')) {
+        setErrors({
+          form: 'Unable to connect to server. Please try again later.'
+        });
       } else {
         setErrors({
-          form: error.message || 'There was an error creating your account. Please try again.'
+          form: `Registration failed: ${error.message}`
         });
       }
     } finally {
@@ -196,51 +226,24 @@ const { login } = useAuthStore(); // get login method from zustand
     setErrors({});
     
     try {
-      // Redirect to backend OAuth endpoint
-      window.location.href =  `http://localhost:3000/api/v1/auth/${provider.toLowerCase()}`;
-      
-      // Alternative: Handle popup flow
-      /*
-      const popup = window.open(
-        `${API_BASE_URL}/auth/${provider.toLowerCase()}/register`,
-        'oauth',
-        'width=500,height=600'
-      );
-      
-      const messageListener = (event) => {
-        if (event.origin !== API_BASE_URL) return;
-        
-        if (event.data.success) {
-          console.log('Social registration successful:', event.data);
-          popup.close();
-          setShowSuccess(true);
-        } else {
-          setErrors({ form: event.data.error || `${provider} registration failed` });
-          popup.close();
-        }
-        
-        window.removeEventListener('message', messageListener);
-        setIsSubmitting(false);
-      };
-      
-      window.addEventListener('message', messageListener);
-      */
+      // Fixed the URL - removed the typo
+      window.location.href = `${API_BASE_URL}/auth/${provider.toLowerCase()}/register`;
       
     } catch (error) {
       console.error(`${provider} registration failed:`, error);
-      setErrors({ form: `${provider} registration failed` });
+      setErrors({ form: `${provider} registration failed: ${error.message}` });
       setIsSubmitting(false);
     }
   };
 
-  // Check email availability (optional feature)
+  // Check email availability with debouncing
   const checkEmailAvailability = async (email) => {
-    if (!email || !email.includes('@')) return;
+    if (!email || !email.includes('@') || email.length < 5) return;
     
     try {
       const response = await apiCall('/auth/check-email', {
         method: 'POST',
-        body: { email }
+        body: { email: email.trim().toLowerCase() }
       });
       
       if (!response.available) {
@@ -251,6 +254,7 @@ const { login } = useAuthStore(); // get login method from zustand
       }
     } catch (error) {
       console.error('Email check failed:', error);
+      // Don't show error for email check failure as it's not critical
     }
   };
 
@@ -269,9 +273,6 @@ const { login } = useAuthStore(); // get login method from zustand
               Thank you for joining CelebInd. Your account has been created successfully.
             </p>
             <div className="flex gap-3 sm:gap-4 justify-center">
-              <Link to="/login" className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 sm:px-6 rounded-md transition duration-300 text-sm sm:text-base">
-                Login Now
-              </Link>
               <Link to="/" className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 sm:px-6 rounded-md transition duration-300 text-sm sm:text-base">
                 Return Home
               </Link>
@@ -289,7 +290,7 @@ const { login } = useAuthStore(); // get login method from zustand
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="bg-red-600 text-white p-4 sm:p-6 text-center">
               <h1 className="text-2xl sm:text-3xl font-bold">Create Your Account</h1>
-              <p className="mt-2 text-sm sm:text-base">Join CelebInd and start planning your dream wedding</p>
+              <p className="mt-2 text-sm sm:text-base">Join CelebInd and start planning your dream wedding to attend</p>
             </div>
             
             <div className="p-4 sm:p-8">
