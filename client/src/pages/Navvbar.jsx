@@ -20,7 +20,7 @@ function Navvbar(){
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex font-bold space-x-4 lg:space-x-6 text-black">
-          <Link to="/" className="text-sm lg:text-base hover:text-white transition">Home</Link>
+          <Link to="/celeb-Ind" className="text-sm lg:text-base hover:text-white transition">Home</Link>
           <Link to="/wedding-types" className="text-sm lg:text-base hover:text-white transition">Wedding Types</Link>
           <Link to="/packages" className="text-sm lg:text-base hover:text-white transition">Packages</Link>
           <Link to="/services" className="text-sm lg:text-base hover:text-white transition">Services</Link>
