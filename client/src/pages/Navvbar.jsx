@@ -13,7 +13,7 @@ function Navvbar(){
   return (
     <nav className="sticky top-0 z-50 bg-gradient-to-r from-red-500 to-white-400 text-white shadow-2xl">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
-        <Link to="/" className="text-xl sm:text-4xl border-white font-bold">
+        <Link to="/celeb-Ind" className="text-xl sm:text-4xl border-white font-bold">
           <span className="text-white-900">Celeb</span>
           <span className="text-red-800">Ind</span>
         </Link>
@@ -55,7 +55,7 @@ function Navvbar(){
         <div className="md:hidden bg-purple-50 text-black absolute top-full left-0 right-0 shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link 
-              to="/" 
+              to="/celeb-Ind" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-purple-100 hover:text-pink-600 transition"
               onClick={() => setMobileMenuOpen(false)}
             >
