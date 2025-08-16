@@ -20,14 +20,14 @@ function App() {
       <div className="App">
         <Navvbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/celeb-Ind" element={<HomePage />} />
           <Route path="/wedding-types" element={<WeddingTypes />} />
           <Route path="/wedding/:id" element={<WeddingDetails />} />
           <Route path="/packages" element={<Packages />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/tourism" element={<TourismPlaces />} />
+          {/* <Route path="/tourism" element={<TourismPlaces />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>

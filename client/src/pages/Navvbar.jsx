@@ -26,7 +26,7 @@ function Navvbar(){
           <Link to="/services" className="text-sm lg:text-base hover:text-white transition">Services</Link>
           <Link to="/about-us" className="text-sm lg:text-base hover:text-white transition">About Us</Link>
           <Link to="/contact" className="text-sm lg:text-base hover:text-white transition">Contact</Link>
-          <Link to="/Tourism" className="text-sm lg:text-base hover:text-white transition">tourism</Link>
+          {/* <Link to="/Tourism" className="text-sm lg:text-base hover:text-white transition">tourism</Link> */}
         </div>
         
         {/* Desktop Auth Buttons */}
@@ -96,13 +96,13 @@ function Navvbar(){
             >
               Contact
             </Link>
-            <Link 
+            {/* <Link 
               to="/TourismPlaces" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-purple-100 hover:text-pink-600 transition"
               onClick={() => setMobileMenuOpen(false)}
             >
               Tourism
-            </Link>
+            </Link> */}
           </div>
             
             
