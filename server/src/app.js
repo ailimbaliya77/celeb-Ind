@@ -3,6 +3,7 @@ import cors from "cors";
 import indexRouter from "./routes/index.routes.js";
 import {
   errorHandler,
+  jwtHandler,
   notFoundHandler,
   validationHandler,
 } from "./middlewares/error.middleware.js";
@@ -18,6 +19,7 @@ app.use(cors())
 app.use("/api/v1", indexRouter);
 
 app.use(validationHandler);
+app.use(jwtHandler);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
