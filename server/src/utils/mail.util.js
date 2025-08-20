@@ -1,12 +1,12 @@
 import nodemailer from "nodemailer";
 
-const EMAIL = process.env.EMAIL;
-const PASSWORD = process.env.PASSWORD;
+const EMAIL = process.env.SMTP_EMAIL;
+const PASSWORD = process.env.GMAIL_APP_PASSWORD;
 
 export const sendVerificationEmail = async (to, subject, html) => {
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
+    host: "smtp.gmail.com",
     port: 587,
     auth: {
       user: EMAIL,
@@ -20,6 +20,4 @@ export const sendVerificationEmail = async (to, subject, html) => {
     subject,
     html,
   });
-
-  console.log('Preview URL:', nodemailer.getTestMessageUrl(info));
 };

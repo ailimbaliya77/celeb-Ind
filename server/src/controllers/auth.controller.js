@@ -12,6 +12,7 @@ const JWT_ACCESS_EXPIRE_TIME = process.env.JWT_ACCESS_EXPIRE_TIME;
 const JWT_REFRESH_EXPIRE_TIME = process.env.JWT_REFRESH_EXPIRE_TIME;
 const JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET;
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET;
+const BASE_API_URL = process.env.BASE_API_URL;
 
 export const authLogin = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -174,7 +175,7 @@ export const verifyEmail = asyncHandler(async (req, res, next) => {
       const emailContent = `
           <h2>Hello ${user.firstName},</h2>
           <p>Click the link below to verify your email:</p>
-          <a href="http://localhost:3000/api/v1/auth/verify?token=${newToken}">Verify Email</a>
+          <a href="${BASE_API_URL}/api/v1/auth/verify?token=${newToken}">Verify Email</a>
         `;
 
       await sendVerificationEmail(
@@ -183,7 +184,7 @@ export const verifyEmail = asyncHandler(async (req, res, next) => {
         emailContent
       );
 
-      res.json(
+      return res.json(
         getSuccessResponse({
           message:
             "Verification link expired. A new link has been sent to your email.",
@@ -191,7 +192,7 @@ export const verifyEmail = asyncHandler(async (req, res, next) => {
       );
     }
 
-    next(error);
+    return next(error);
   }
 
   const userId = decoded.id;

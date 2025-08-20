@@ -31,7 +31,7 @@ export const userRegistration = asyncHandler(async (req, res) => {
 
   await userData.save();
 
-  const verificationToken = generateToken(userData, JWT_ACCESS_SECRET, JWT_ACCESS_EXPIRE_TIME)
+  const verificationToken = generateToken(userData, JWT_ACCESS_SECRET, JWT_ACCESS_EXPIRE_TIME + "m")
 
   const emailContent = `
     <h2>Hello ${firstName},</h2>
