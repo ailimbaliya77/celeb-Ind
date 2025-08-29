@@ -13,14 +13,14 @@ function Navvbar(){
   return (
     <nav className="bg-[#21151c] text-white px-6 md:px-12 py-4 flex items-center h-[56px] justify-between">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
-        <Link to="/celeb-ind" className="text-xl sm:text-4xl border-white font-bold">
-          <span className="text-white-900">Wedding</span>
-          <span className="text-red-800">Tour</span>
+        <Link to="/" className="text-xl sm:text-4xl border-white font-bold">
+          <span className="text-white-900">Celeb</span>
+          <span className="text-red-800">Ind</span>
         </Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8 font-semibold text-sm">
-          <Link to="/celeb-ind" className="text-sm lg:text-base hover:text-white transition">Home</Link>
+        <div className="hidden md:flex font-bold space-x-4 lg:space-x-6 text-black">
+          <Link to="/" className="text-sm lg:text-base hover:text-white transition">Home</Link>
           <Link to="/wedding-types" className="text-sm lg:text-base hover:text-white transition">Wedding Types</Link>
           <Link to="/FAQ" className="text-sm lg:text-base hover:text-white transition">FAQ</Link>
           <Link to="/services" className="text-sm lg:text-base hover:text-white transition">Services</Link>
