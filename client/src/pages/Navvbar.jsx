@@ -11,28 +11,27 @@ function Navvbar(){
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-gradient-to-r from-red-500 to-white-400 text-white shadow-2xl">
+    <nav className="bg-[#21151c] text-white px-6 md:px-12 py-4 flex items-center h-[56px] justify-between">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
-        <Link to="/" className="text-xl sm:text-4xl border-white font-bold">
-          <span className="text-white-900">Celeb</span>
-          <span className="text-red-800">Ind</span>
+        <Link to="/celeb-ind" className="text-xl sm:text-4xl border-white font-bold">
+          <span className="text-white-900">Wedding</span>
+          <span className="text-red-800">Tour</span>
         </Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex font-bold space-x-4 lg:space-x-6 text-black">
-          <Link to="/" className="text-sm lg:text-base hover:text-white transition">Home</Link>
+        <div className="hidden md:flex items-center space-x-8 font-semibold text-sm">
+          <Link to="/celeb-ind" className="text-sm lg:text-base hover:text-white transition">Home</Link>
           <Link to="/wedding-types" className="text-sm lg:text-base hover:text-white transition">Wedding Types</Link>
-          <Link to="/packages" className="text-sm lg:text-base hover:text-white transition">Packages</Link>
+          <Link to="/FAQ" className="text-sm lg:text-base hover:text-white transition">FAQ</Link>
           <Link to="/services" className="text-sm lg:text-base hover:text-white transition">Services</Link>
           <Link to="/about-us" className="text-sm lg:text-base hover:text-white transition">About Us</Link>
           <Link to="/contact" className="text-sm lg:text-base hover:text-white transition">Contact</Link>
-          {/* <Link to="/Tourism" className="text-sm lg:text-base hover:text-white transition">tourism</Link> */}
         </div>
         
         {/* Desktop Auth Buttons */}
         <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
-          <Link to="/login" className="text-sm lg:text-base text-black hover:text-yellow-300 transition">Log In</Link>
-          <Link to="/signup" className="bg-yellow-500 hover:bg-yellow-600 text-black px-3 py-1.5 lg:px-4 lg:py-2 rounded text-sm lg:text-base transition">Sign Up</Link>
+          <Link to="/login" className="text-sm lg:text-base text-white hover:text-yellow-300 transition">Log In</Link>
+          <Link to="/BecomeHost" className="bg-yellow-500 hover:bg-yellow-600 text-black px-3 py-1.5 lg:px-4 lg:py-2 rounded text-sm lg:text-base transition">Become A Host</Link>
         </div>
         
         {/* Mobile Menu Button */}
@@ -55,7 +54,7 @@ function Navvbar(){
         <div className="md:hidden bg-purple-50 text-black absolute top-full left-0 right-0 shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link 
-              to="/" 
+              to="/celeb-Ind" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-purple-100 hover:text-pink-600 transition"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -69,11 +68,11 @@ function Navvbar(){
               Wedding Types
             </Link>
             <Link 
-              to="/packages" 
+              to="/FAQ" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-purple-100 hover:text-pink-600 transition"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Packages
+              FAQ
             </Link>
             <Link 
               to="/services" 

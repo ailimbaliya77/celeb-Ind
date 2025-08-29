@@ -1,14 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import Hero from '../components/Hero';
-import WeddingCards from '../components/Weddingcards'
 import TestimonialCard from '../components/TestimonialCard';
 import { Link } from 'react-router-dom';
 import { RiNumber1 } from "react-icons/ri";
 import { RiNumber2 } from "react-icons/ri";
 import { RiNumber3 } from "react-icons/ri";
-import img1 from '../assets/punjabi-engagement-ceremony-3.jpg'
-import img2 from '../assets/brebeach-wedding.webp'
-import img3 from '../assets/mountain-wedding.jpg'
 import imgg1 from '../assets/northwedding2.jpg'
 import imgg2 from '../assets/south indian wedding.jpeg'
 import imgg3 from '../assets/gujrati-wedding.webp'
@@ -22,37 +18,6 @@ function HomePage()  {
     // Mark images as loaded after component mounts
     setImagesLoaded(true);
   }, []);
-
-  // Sample data
-  const featuredWeddings = [
-    {
-      id: 1,
-      image: img1,
-      title: 'Raj & Priya\'s Destination Wedding',
-      date: 'May 15-18, 2025',
-      location: 'Udaipur, Rajasthan',
-      description: 'An extravagant royal wedding in the city of lakes with traditional Rajasthani ceremonies.',
-      link: '/wedding/1'
-    },
-    {
-      id: 2,
-      image: img2,
-      title: 'Arjun & Meera\'s Beach Wedding',
-      date: 'June 5-7, 2025',
-      location: 'Goa, India',
-      description: 'A beautiful fusion of traditional South Indian and Western ceremonies on the beach.',
-      link: '/wedding/2'
-    },
-    {
-      id: 3,
-      image:img3,
-      title: 'Vikram & Nisha\'s Mountain Wedding',
-      date: 'July 20-23, 2025',
-      location: 'Shimla, Himachal Pradesh',
-      description: 'A magical North Indian wedding celebration in the mountains with Punjabi traditions.',
-      link: '/wedding/3'
-    }
-  ];
   
   const testimonials = [
     {
@@ -60,7 +25,7 @@ function HomePage()  {
       image: "https://randomuser.me/api/portraits/women/32.jpg",
       name: 'Sarah Johnson',
       location: 'USA',
-      quote: 'Attending an Indian wedding through CelebInd was the most immersive cultural experience I\'ve ever had. The colors, music, and hospitality were incredible!'
+      quote: 'Attending an Indian wedding through WeddingTour was the most immersive cultural experience I\'ve ever had. The colors, music, and hospitality were incredible!'
     },
     {
       id: 2,
@@ -87,33 +52,18 @@ function HomePage()  {
   return (
     <div>
       <Hero />
-      
+      <br />
       {/* Featured Weddings Section */}
       <section className="py-10 sm:py-16 bg-white-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2 text-black">Featured Weddings</h2>
-          <p className="text-purple-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base">Discover upcoming authentic Indian weddings that you can attend as a special guest</p>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {featuredWeddings.map(wedding => (
-              <WeddingCards
-                key={wedding.id}
-                image={wedding.image}
-                title={wedding.title}
-                date={wedding.date}
-                location={wedding.location}
-                description={wedding.description}
-                link={wedding.link}
-              />
-            ))}
-          </div>
-          
-          <div className="text-center mt-8 sm:mt-12">
-            <Link to="/wedding-types" className="inline-block bg-orange-600 hover:bg-red-700 text-white font-bold px-4 sm:px-6 py-2 sm:py-3 rounded transition text-sm sm:text-base">
-              View All Weddings
-            </Link>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2 text-gray-800">BEYOND TOURISM – A TRUE CULTURAL CONNECTION</h2>
+          <br />
+          <p className="bg-white text-black font-roboto text-[18px] leading-[1.5] tracking-[0.4px] antialiased">Travel often shows you places, but a wedding shows you people – their values, their stories, their traditions. Indian weddings are a window into the soul of the culture, where love and heritage are celebrated together in grand style.
+          Dress the part, enjoy the feast, and lose yourself in the rhythm of music and dance. Each ritual you witness is a lesson in history, each interaction a bond with the community. It’s not just about seeing India – it’s about living it.</p>
+          <br />
+          <p className="bg-white text-black font-roboto text-[18px] leading-[1.5] tracking-[0.4px] antialiased">A traditional Indian wedding is nothing short of a festival – a fusion of rituals, music, dance, and food that lasts for days. It’s where culture becomes an experience, and guests are welcomed as family.
+
+          Step into this celebration and let the colors, flavors, and sounds of India embrace you. From the joy of the wedding procession to the intimacy of sacred rituals, you’ll find yourself immersed in a cultural journey that leaves you inspired, connected, and transformed.</p>
         </div>
       </section>
       
@@ -230,7 +180,7 @@ function HomePage()  {
       <section className="py-10 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2 text-gray-800">Guest Testimonials</h2>
-          <p className="text-gray-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base">Hear from travelers who have experienced the magic of Indian weddings through CelebInd</p>
+          <p className="text-gray-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base">Hear from travelers who have experienced the magic of Indian weddings through WeddingTour</p>
           
           <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map(testimonial => (
